@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Practice Problem Page</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:100&amp;display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:200&amp;display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Codystar&amp;display=swap"
+	rel="stylesheet">
+<style type="text/css">
+body {
+	align-items: center;
+	font-size: 80%;
+	padding: 0px;
+	font-size: 80%;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+	color: #f1c232;
+	margin: 0;
+}
+
+h1 {
+	font-weight: 200;
+	padding-bottom: 15px;
+	margin: 0;
+}
+
+.practice {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	font-family: 'Montserrat', sans-serif;
+	padding-top: 200px;
+	padding-bottom: 5px;
+	font-size: 300%;
+	font-weight: 100;
+}
+
+.submitbutton {
+	padding: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+}
+
+.input {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.bar {
+	color: #fff;
+	background-color: #f1c232;
+	padding: 15px;
+	font-family: 'Codystar', cursive;
+	font-size: 450%;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+.eq {
+	display: flex;
+	justify-content: center;
+	font-weight: 400;
+	padding: 10px;
+}
+}
+</style>
+</head>
+
+<body>
+
+	<div class="practice">
+		<h1>Find the derivative of:</h1>
+	</div>
+	<div class="eq">
+		<p style="font-size: 70px; margin: 0;" th:text="${expression}"></p>
+	</div>
+	<div class="input">
+		<form th:action="@{/index}" th:object="${answerForm}" method="post"
+			action="">
+			<label for="answer"></label> <input
+				style="width: 500px; height: 50px; font-size: 32px;" type="text"
+				id="answer" name="answer" autofocus="autofocus" /> <br />
+
+			<div class="submitbutton">
+				<input
+					style="width: 90px; height: 30px; font-size: 20px; text-align: left; background-color: #f1c232; border-radius: 8px; font-family: 'Montserrat', sans-serif; color: white;"
+					type="submit" value="CHECK" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
