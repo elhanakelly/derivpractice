@@ -19,7 +19,7 @@ public class Polynomial {
 	
 	
 	/**
-	 * 
+	 * Creates an object of type Polynomial 
 	 */
 	public Polynomial() {
 		termList = new ArrayList<Term>();
@@ -32,6 +32,10 @@ public class Polynomial {
 		derivative = findDerivative();
 	}
 	
+	/**
+	 * Created an object of type polynomial
+	 * @param list an aray list of terms 
+	 */
 	public Polynomial(ArrayList<Term> list) { 
 		termList = list;
 		sortList();
@@ -43,7 +47,7 @@ public class Polynomial {
 	}
 	
 	/**
-	 * 
+	 * Populates an array list with 1-5 terms 
 	 */
 	private void populateList() { 
 		int ran = (int)(Math.random()*5) + 1;
@@ -57,18 +61,19 @@ public class Polynomial {
 	}
 	
 	/**
-	 * 
+	 * Prints all the terms in the term list
+	 * and their corresponding exponents and coefficients
 	 */
 	private void printList() { 
 		for(int i = 0; i < termList.size(); i++) { 
-			//System.out.println("term: " + termList.get(i).getTerm());
-			//System.out.println("ex: " + termList.get(i).getEx());
-			//System.out.println("co: " + termList.get(i).getCo());
+			System.out.println("term: " + termList.get(i).getTerm());
+			System.out.println("ex: " + termList.get(i).getEx());
+			System.out.println("co: " + termList.get(i).getCo());
 		}
 	}
 	
 	/**
-	 * 
+	 * Sorts the list from greatest to least degree
 	 */
 	private void sortList() {
 		boolean sorted = false;
@@ -87,7 +92,7 @@ public class Polynomial {
 	}
 	
 	/**
-	 * 
+	 * Combines like terms within the list of terms
 	 */
 	private void combineLike() { 
 		for(int i = 0; i < termList.size(); i++) {
@@ -104,8 +109,11 @@ public class Polynomial {
 	}
 	
 	/**
-	 * @param list
-	 * @return
+	 * Takes in the list of terms and returns that list 
+	 * as strings 
+	 * @param list an array list of terms 
+	 * @return an array list of strings that correspond to 
+	 * the original term list 
 	 */
 	private ArrayList<String> termToStringList(ArrayList<Term> list) { 
 		ArrayList<String> temp = new ArrayList<String>();
@@ -117,6 +125,7 @@ public class Polynomial {
 	}
 	
 	/**
+	 * Returns a s
 	 * @param list
 	 * @return
 	 */
@@ -188,15 +197,6 @@ public class Polynomial {
 	 */
 	public ArrayList<Term> getList() {
 		return termList;
-	}
-
-	public static void main(String [] args) {
-		Polynomial fuckitall = new Polynomial();
-		System.out.println(fuckitall.getFullExpression());
-		System.out.println(fuckitall.getDerivative());
-		System.out.println(fuckitall.derivNoSpace());
-		System.out.println(fuckitall.expressionForHTML());
-		System.out.println("⁰");
 	}
 	
 	public String derivNoSpace() { 
