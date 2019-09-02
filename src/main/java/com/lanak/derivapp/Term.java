@@ -6,7 +6,7 @@ public class Term {
 	String term;;
 	
 	/**
-	 * 
+	 * Constructs a term object 
 	 */
 	public Term() { 
 		coefficient= (int)(Math.random()*21); //gives a random coefficient between 0 and 20
@@ -14,6 +14,11 @@ public class Term {
 		term = assignTerm(); 
 	}
 	
+	/** 
+	 * Constructs a term object
+	 * @param co an int representing the coefficient of the term 
+	 * @param ex an int representing the exponent of the term
+	 */
 	public Term(int co, int ex) { 
 		coefficient = co;
 		exponent = ex; 
@@ -21,7 +26,8 @@ public class Term {
 	}
 	
 	/**
-	 * @return
+	 * Returns the string representation of the term
+	 * @return a string representation of the term
 	 */
 	private String assignTerm() { 
 		if(coefficient == 0) {
@@ -38,7 +44,7 @@ public class Term {
 	}
 	
 	/**
-	 * 
+	 * Finds the derivative of the term
 	 */
 	public void deriveTerm() { 
 		coefficient = getCo() * getEx(); 
@@ -47,27 +53,31 @@ public class Term {
 	}
 	
 	/**
-	 * @return
+	 * Returns the coefficient of the term
+	 * @return an int representing the coefficient of the term
 	 */
 	public int getCo() {
 		return coefficient; 
 	}
 	
 	/**
-	 * @param c
+	 * Sets the coefficient of the term
+	 * @param c an int representing the coefficient of the term
 	 */
 	public void setCo(int c) { 
 		coefficient = c;
 	}
 	
 	/**
-	 * @return
+	 * Returns the exponent of the term
+	 * @return an int representing the exponent of the term
 	 */
 	public int getEx() { 
 		return exponent;
 	}
 	
 	/**
+	 * Returns the string representation of the term
 	 * @return
 	 */
 	public String getTerm() {
@@ -75,8 +85,10 @@ public class Term {
 	}
 	
 	/**
-	 * @param c
-	 * @param e
+	 * Sets the string representation of the string based
+	 * on the term's coefficient and exponent 
+	 * @param c an int representing the term's coefficient 
+	 * @param e an int representing the term's exponent 
 	 */
 	public void setTerm(int c, int e) { 
 		if(e == 1) {

@@ -34,7 +34,7 @@ public class Polynomial {
 	
 	/**
 	 * Created an object of type polynomial
-	 * @param list an aray list of terms 
+	 * @param list an array list of terms 
 	 */
 	public Polynomial(ArrayList<Term> list) { 
 		termList = list;
